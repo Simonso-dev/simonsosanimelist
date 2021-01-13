@@ -1,5 +1,6 @@
 <?php
 
+include("validate.php");
 
 $fileanime="anmie.txt";
 
@@ -8,8 +9,11 @@ if (isset($_POST["add"]))
 {
     $animename=$_POST["animename"];
     $episodes=$_POST["episodes"];
+
+    $legalAnimename=validateAnimename($animename);
+
 }
-     if($legalanimename && $legalepisodes)
+     if($legalAnimename && $legalEpisodes)
       {
 
         $fileoperation="a";
