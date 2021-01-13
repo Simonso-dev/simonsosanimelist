@@ -21,13 +21,13 @@ function validateEpisodes($episodes)
  
     $legalEpisodes=true;
 
-    if(!$episodes)
+    if(!ctype_digit($episodes))
       {
           $legalEpisodes=false;
           print("Must contain numbers only");
       }
-    
 
+    return $legalEpisodes;
 }
 
 
