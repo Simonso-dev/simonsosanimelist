@@ -31,5 +31,20 @@ function validateEpisodes($episodes)
 }
 
 
+function validateScore($score)
+{
+   
+    $legalScore=true;
+
+    if(!ctype_digit($score)!=3)
+      {
+          $legalScore=false;
+          print("Must contain numbers between 1 and 10 only")
+      }
+
+    return $legalScore;
+}
+
+
 
 ?>

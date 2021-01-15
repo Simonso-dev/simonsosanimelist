@@ -9,11 +9,14 @@ if (isset($_POST["add"]))
 {
     $animename=$_POST["animename"];
     $episodes=$_POST["episodes"];
+    $score=$_POST["score"];
 
     $legalAnimename=validateAnimename($animename);
+    $legalEpisodes=validateEpisodes($episodes);
+    $legalScore=validateScore($score);
 
 }
-     if($legalAnimename && $legalEpisodes)
+     if($legalAnimename && $legalEpisodes && $score)
       {
 
         $fileoperation="a";
