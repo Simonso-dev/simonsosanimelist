@@ -2,7 +2,7 @@
 
 include("validate.php");
 
-$fileanime="anmie.txt";
+$fileanime="anime.txt";
 
 
 if (isset($_POST["add"]))
