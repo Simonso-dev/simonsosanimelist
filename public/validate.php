@@ -8,7 +8,7 @@ function validateAnimename($animename)
     if(!$animename)
        {
          $legalAnimename=false;
-         print("Anime name isn't filled out")  
+         print("Anime name isn't filled out </br>"); 
        }
     
     return $legalAnimename;
@@ -24,7 +24,7 @@ function validateEpisodes($episodes)
     if(!ctype_digit($episodes))
       {
           $legalEpisodes=false;
-          print("Must contain numbers only");
+          print("Episodes must contain numbers only </br>");
       }
 
     return $legalEpisodes;
@@ -36,10 +36,10 @@ function validateScore($score)
    
     $legalScore=true;
 
-    if(!ctype_digit($score)!=3)
+    if(!ctype_digit($score))
       {
           $legalScore=false;
-          print("Must contain numbers between 1 and 10 only")
+          print("Score must contain numbers only </br>");
       }
 
     return $legalScore;

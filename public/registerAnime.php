@@ -21,7 +21,7 @@ if (isset($_POST["add"]))
 
         $fileoperation="a";
         
-        $line=$animename. ";" .$episodes. "\n";
+        $line=$animename. ";" .$episodes. ";" .$score. "\n";
 
         $file=fopen($fileanime, $fileoperation);
 
