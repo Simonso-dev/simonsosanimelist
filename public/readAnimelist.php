@@ -1,6 +1,10 @@
 <?php
 
-if(!$fileanime("anime.txt"))
+
+$fileanime="anime.txt";
+
+
+if(!$fileanime)
   {
       print("This file doesn't exist");
   }
@@ -11,14 +15,19 @@ if(!$fp)
   {
    print("File cannot be read");   
   }
-  echo "<table border =4>";
+  echo "<table>";
   $counter=1;
   while(!feof($fp))
   {
       $anime=fgets($fp);
-      echo "<tr><td>$counter</td>";
-      echo "<td>$anime</td>";
-      $counter++;
+
+      if(strlen($anime)>0)
+        {
+          echo "<tr><td>$counter</td>";
+          echo "<td>$anime</td></tr>";
+          $counter++;
+        }
+      
   }
       echo "</table>";
 
