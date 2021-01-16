@@ -29,6 +29,7 @@
                </form>
 
 
+               <?php include("readAnimelist.php"); ?>
 
 
          

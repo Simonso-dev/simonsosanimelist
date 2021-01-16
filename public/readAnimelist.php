@@ -1,11 +1,11 @@
 <?php
 
-if(!fileanime("anime.txt"))
+if(!$fileanime("anime.txt"))
   {
       print("This file doesn't exist");
   }
 
-$fp=fopen("anime.txt". "r");
+$fp=fopen("anime.txt", "r");
 
 if(!$fp)
   {
