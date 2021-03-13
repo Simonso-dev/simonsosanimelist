@@ -29,7 +29,8 @@
                </form>
 
 
-               <?php include("readAnimelist.php");?>
+               <?php include("readAnimelist.php");
+                     require('vendor/autoload.php');?>
 
               
          
