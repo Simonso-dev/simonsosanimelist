@@ -1,36 +1,45 @@
+
+<table>
+
+<tr name="main-row"><th>Anime Name</th><th>Episdoes</th><th>Score</th></tr>
+
+
+</table>
+
+
+
 <?php
 
+include("db.php");
 
-$fileanime="anime.txt";
+$sqlQuery="SELECT *
+           FROM Anime
+           GROUP BY Animename;";
+
+$sqlResult=mysqli_query($db, $sqlQuery);
+$numRows=mysqli_num_rows($sqlResult);
+
+for($r=1;$r<=$numRows;$r++)
+{
+  $row=mysqli_fetch_array($sqlResult);
+  $animenr=$row["AnimeNr"];
+  $animename=$row["AnimeName"];
+  $episodes=$row["Episodes"];
+  $score=$row["Score"];
+
+  print("<tr><td>$animenr</td> <td>$animename</td> <td>$episodes</td> <td>$score</td></tr>");
+}
 
 
-if(!$fileanime)
-  {
-      print("This file doesn't exist");
-  }
 
-$fp=fopen("anime.txt", "r");
 
-if(!$fp)
-  {
-   print("File cannot be read");   
-  }
-  echo "<table>";
-  $counter=1;
-  while(!feof($fp))
-  {
-      $anime=fgets($fp);
 
-      if(strlen($anime)>0)
-        {
-          echo "<tr><td>$counter</td>";
-          echo "<td>$anime</td></tr>";
-          $counter++;
-        }
-      
-  }
-      echo "</table>";
 
-  fclose($fp);
+
+
+
+
+
+
 
 ?>

@@ -7,6 +7,7 @@ $fileanime="anime.txt";
 
 if (isset($_POST["add"]))
 {
+    $animenr=$_POST["animenr"];
     $animename=$_POST["animename"];
     $episodes=$_POST["episodes"];
     $score=$_POST["score"];
@@ -19,15 +20,11 @@ if (isset($_POST["add"]))
      if($legalAnimename && $legalEpisodes && $score)
       {
 
-        $fileoperation="a";
-        
-        $line=$animename. ";" .$episodes. ";" .$score. "\n";
+        $sqlQuery="INSERT INTO Anime (Animename, Episodes, Score)
+                    VALUES ('$animename','$episodes','$score');";
 
-        $file=fopen($fileanime, $fileoperation);
+        $sqlResult=mysqli_query($db, $sqlQuery);
 
-        fwrite($file, $line);
-        
-        fclose($file);
         
         print("Anmie has been registered");
 
