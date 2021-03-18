@@ -9,13 +9,12 @@
 
 <?php
 
-include("db.php");
 
 $sqlQuery="SELECT *
            FROM Anime
            GROUP BY Animename;";
 
-$sqlResult=mysqli_query($db, $sqlQuery);
+$sqlResult=mysqli_query($conn, $sqlQuery);
 $numRows=mysqli_num_rows($sqlResult);
 
 for($r=1;$r<=$numRows;$r++)

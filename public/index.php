@@ -17,6 +17,7 @@ include("header.php");
 
 
 <?php 
+include("registerAnime.php");
 include("readAnimelist.php");
 
 

@@ -2,7 +2,7 @@
 
 include("validate.php");
 
-$fileanime="anime.txt";
+include("db.php");
 
 
 if (isset($_POST["add"]))
@@ -23,7 +23,7 @@ if (isset($_POST["add"]))
         $sqlQuery="INSERT INTO Anime (Animename, Episodes, Score)
                     VALUES ('$animename','$episodes','$score');";
 
-        $sqlResult=mysqli_query($db, $sqlQuery);
+        $sqlResult=mysqli_query($conn, $sqlQuery);
 
         
         print("Anmie has been registered");
