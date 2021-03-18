@@ -28,17 +28,4 @@ for($r=1;$r<=$numRows;$r++)
 
   print("<tr><td>$animenr</td> <td>$animename</td> <td>$episodes</td> <td>$score</td></tr>");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

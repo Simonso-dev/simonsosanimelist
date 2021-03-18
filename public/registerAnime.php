@@ -29,8 +29,4 @@ if (isset($_POST["add"]))
         print("Anmie has been registered");
 
       }
-
-
-
-
 ?>
