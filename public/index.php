@@ -39,7 +39,7 @@ if (isset($_POST["add"]))
         $sqlQuery="INSERT INTO Anime (Animename, Episodes, Score)
                     VALUES ('$animename','$episodes','$score');";
 
-        $sqlResult=mysqli_query($conn, $sqlQuery);
+        $sqlResult=mysqli_query($conn, $sqlQuery) or die ("Not able to register data");
 
         
         print("Anmie has been registered");
