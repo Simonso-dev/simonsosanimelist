@@ -3,7 +3,7 @@ include("header.php");
 ?>
                 
 
-               <form method="post" action="registerAnime.php" id="register anime" name="register anime">
+               <form method="post" id="register anime" name="register anime">
 
                 Anime name<input type="text" id="animename" name="animename">
 
