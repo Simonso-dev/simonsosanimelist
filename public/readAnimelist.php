@@ -2,7 +2,7 @@
 
 <table>
 
-<tr name="main-row"><th>Anime Name</th><th>Episdoes</th><th>Score</th></tr>
+<tr name="main-row"><th>AnimeNr</th><th>Anime Name</th><th>Episdoes</th><th>Score</th></tr>
 
 </table>
 
