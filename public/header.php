@@ -9,3 +9,8 @@
 
 </head>
          <body>
+                <header>
+
+                <h1>Simonso's Anime List</h1>
+
+                </header>

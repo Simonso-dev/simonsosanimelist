@@ -1,11 +1,10 @@
 
+
 <table>
 
 <tr name="main-row"><th>Anime Name</th><th>Episdoes</th><th>Score</th></tr>
 
-
 </table>
-
 
 
 <?php

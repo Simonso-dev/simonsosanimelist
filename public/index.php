@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Simonso's Anime List</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-
-</head>
-         <body>
+<?php
+include("header.php");
+?>
                 
-               <header>
-
-                <h1>Simonso's Anime List</h1>
-
-               </header>
 
                <form method="post" action="registerAnime.php" id="register anime" name="register anime">
 
@@ -29,11 +16,9 @@
                </form>
 
 
-               <?php include("readAnimelist.php");
-                     require('vendor/autoload.php');?>
+<?php 
+include("readAnimelist.php");
 
-              
-         
-         </body>
 
-</html>
+include("footer.php")
+?>
