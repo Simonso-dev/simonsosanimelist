@@ -18,14 +18,13 @@ include("header.php");
 
 
 <?php 
-include("readAnimelist.php");
 include("db.php");
-incldue("validate.php");
+include("readAnimelist.php");
+include("validate.php");
 
 
 if (isset($_POST["add"]))
 {
-    $animenr=$_POST["animenr"];
     $animename=$_POST["animename"];
     $episodes=$_POST["episodes"];
     $score=$_POST["score"];
