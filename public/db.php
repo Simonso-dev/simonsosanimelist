@@ -9,8 +9,6 @@ $db = substr($url["heroku_bec9e21fd1904b0"], 1);
 $conn = new mysqli($server, $username, $password, $db) or die("Not able to contact the database-server");
 
 
-console_log($conn);
-
 function console_log( $data ){
     echo '<script>';
     echo 'console.log('. json_encode( $data ) .')';

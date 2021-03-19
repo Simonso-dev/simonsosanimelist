@@ -1,5 +1,6 @@
 <?php
 include("header.php");
+console_log($conn);
 ?>
                 
 
