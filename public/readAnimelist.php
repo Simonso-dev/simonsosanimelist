@@ -1,14 +1,7 @@
-
-
-<table>
-
-<tr name="main-row"><th>AnimeNr</th><th>Anime Name</th><th>Episdoes</th><th>Score</th></tr>
-
-</table>
-
-
 <?php
 
+print("<table>");
+print("<tr name='main-row'><th>AnimeNr</th><th>Anime Name</th><th>Episdoes</th><th>Score</th></tr><br>");
 
 $sqlQuery="SELECT *
            FROM Anime
@@ -25,6 +18,7 @@ for($r=1;$r<=$numRows;$r++)
   $episodes=$row["Episodes"];
   $score=$row["Score"];
 
-  print("<tr><td>$animenr</td> <td>$animename</td> <td>$episodes</td> <td>$score</td></tr>");
+  print("<tr><td>$animenr</td> <td>$animename</td> <td>$episodes</td> <td>$score</td></tr><br>");
 }
+print("</table>");
 ?>
