@@ -20,6 +20,7 @@ include("header.php");
 <?php 
 include("readAnimelist.php");
 include("db.php");
+incldue("validate.php");
 
 
 if (isset($_POST["add"]))
