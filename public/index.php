@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-console_log($conn);
+
 ?>
                 
 
@@ -33,7 +33,7 @@ if (isset($_POST["add"]))
     $legalEpisodes=validateEpisodes($episodes);
     $legalScore=validateScore($score);
 
-}
+
      if($legalAnimename && $legalEpisodes && $score)
       {
 
@@ -46,5 +46,6 @@ if (isset($_POST["add"]))
         print("Anmie has been registered");
 
       }
+}
 include("footer.php");
 ?>
