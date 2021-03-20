@@ -7,13 +7,6 @@ $password = "40f8dada";
 $db = "heroku_bec9e21fd1904b0";
 
 $conn = new mysqli($server, $username, $password, $db) or die("Not able to contact the database-server");
-
-/*
-function console_log( $data ){
-    echo '<script>';
-    echo 'console.log('. json_encode( $data ) .')';
-    echo '</script>';
-  } */
 ?>
 
 
