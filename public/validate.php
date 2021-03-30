@@ -8,7 +8,7 @@ function validateAnimename($animename)
     if(!ctype_alpha($animename))
        {
          $legalAnimename=false;
-         print("Anime name isn't filled out </br>"); 
+         print("Anime name can't contain numbers</br>");
        }
     
     return $legalAnimename;
