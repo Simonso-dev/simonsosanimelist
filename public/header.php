@@ -23,4 +23,6 @@ if(!$loggedinUser)
 
                 <h1>Simonso's Anime List</h1>
 
+                <p><a href="login.php">Login</a></p>
+
                 </header>
