@@ -1,3 +1,12 @@
+<?php
+session_start();
+@$loggedinUser=$_SESSION["username"];
+
+if(!$loggedinUser)
+{
+    print("<meta http-equiv='refresh' content='0;url=index.php'>");
+}
+?>
 <!DOCTYPE html>
 <html>
 
