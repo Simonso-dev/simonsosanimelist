@@ -4,7 +4,7 @@ session_start();
 
 if(!$loggedinUser)
 {
-   print("")
+   print("Not logged in");
   // print("<meta http-equiv='refresh' content='0;url=index.php'>");
 }
 ?>
