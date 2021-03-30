@@ -5,7 +5,7 @@ function validateAnimename($animename)
 {
      $legalAnimename=true;
 
-    if(!ctype_alpha($animename))
+    if(!$animename)
        {
          $legalAnimename=false;
          print("Anime name isn't filled out </br>"); 
