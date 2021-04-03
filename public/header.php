@@ -13,7 +13,7 @@ if(!$loggedinUser)
 
 <head>
 
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="main.css">
 
     <title>Simonso's Anime List</title>
     <meta charset="UTF-8">
