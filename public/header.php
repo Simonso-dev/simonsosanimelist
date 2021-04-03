@@ -4,7 +4,7 @@ session_start();
 
 if(!$loggedinUser)
 {
-   print("Not logged in");
+  // print("Not logged in");
   // print("<meta http-equiv='refresh' content='0;url=index.php'>");
 }
 ?>
@@ -13,7 +13,7 @@ if(!$loggedinUser)
 
 <head>
 
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
 
     <title>Simonso's Anime List</title>
     <meta charset="UTF-8">
