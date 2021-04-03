@@ -4,7 +4,6 @@ session_start();
 
 if(!$loggedinUser)
 {
-  $notloggedin="Not Logged in";
   // print("Not logged in");
   // print("<meta http-equiv='refresh' content='0;url=index.php'>");
 }
@@ -32,8 +31,6 @@ if(!$loggedinUser)
 
                 <p><a href="login.php">Login</a></p>
                 <p><a href="logout.php">Logout</a></p>
-
-                <?php $notloggedin ?>
 
                 </header>
 
