@@ -20,7 +20,7 @@ function checkUsernamePassword($username,$password)
           {
             $row=mysqli_fetch_array($sqlResult);
             $storedPassword=$row["password"];
-          
+
             if($password!=$storedPassword)
              {
                 $legalUser=false;

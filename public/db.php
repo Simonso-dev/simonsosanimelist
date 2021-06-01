@@ -1,12 +1,27 @@
 <?php
-$url = parse_url(getenv("mysql://b5b71d88dff84a:40f8dada@eu-cdbr-west-03.cleardb.net/heroku_bec9e21fd1904b0?reconnect=true"));
+$url = parse_url(getenv("mysql://ofe7c7506pnk3swy:z4ypie1ranjpaa1x@eporqep6b4b8ql12.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/o9d6d8m1y5kentde"));
 
-$server = "eu-cdbr-west-03.cleardb.net";
-$username = "b5b71d88dff84a";
-$password = "40f8dada";
-$db = "heroku_bec9e21fd1904b0";
+$server = "eporqep6b4b8ql12.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+$username = "ofe7c7506pnk3swy";
+$password = "z4ypie1ranjpaa1x";
+$db = "o9d6d8m1y5kentde";
 
-$conn = new mysqli($server, $username, $password, $db) or die("Not able to contact the database-server");
+$conn =new mysqli($server, $username, $password, $db) or die("Not able to contact the database-server");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
-
-

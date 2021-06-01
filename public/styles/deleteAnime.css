@@ -1,0 +1,24 @@
+#deleteAnimeform{
+    padding: 20px;
+    background: rgba(74, 74, 74, 0.2);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    width: 300px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+#deleteAnime{
+margin-top: 10px;
+padding: 5px;
+border: none;
+border-radius: 10px;
+background-color: #9EB7FF;
+color: white;
+}
+#deleteAnime:hover{
+    background-color: #ff5555;
+    color: white;
+    ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
