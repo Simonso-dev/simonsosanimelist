@@ -1,24 +1,23 @@
 var cacheName = 'SAL-v1';
 var urlsToCache = [
-  '/public/registerSW.js',
-  '/public/manifest.json',
-  '/public/styles/main.css',
-  '/public/styles/addAnime.css',
-  '/public/styles/deleteAnime.css',
-  '/public/styles/login.css',
+  '/registerSW.js',
+  '/manifest.json',
+  '/styles/main.css',
+  '/styles/addAnime.css',
+  '/styles/deleteAnime.css',
+  '/styles/login.css',
   '/index.php',
-  '/public/addAnime.php',
-  '/public/deleteAnime.php',
-  '/public/check.php',
-  '/public/db.php',
-  '/public/footer.php',
-  '/public/header.php',
-  '/public/readAnimelist.php',
-  '/public/functions.php',
-  '/public/login.php',
-  '/public/logout.php',
-  '/public/validate.php',
-  '/public/registerUser.php'
+  '/addAnime.php',
+  '/deleteAnime.php',
+  '/check.php',
+  '/footer.php',
+  '/header.php',
+  '/readAnimelist.php',
+  '/functions.php',
+  '/login.php',
+  '/logout.php',
+  '/validate.php',
+  '/registerUser.php'
 ];
 
 self.addEventListener('install', (e) => {

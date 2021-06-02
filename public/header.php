@@ -23,8 +23,8 @@ if(!$loggedinUser) {
     <meta name="msapplication-starturl" content="/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="icon" type="image/png" sizes="192x192" href="/sal/public/images/SAL LOGO v2.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/sal/public/images/SAL LOGO v2.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/SAL LOGO v2.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="images/SAL LOGO v2.png">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@ if(!$loggedinUser) {
     <link rel="stylesheet" href="styles/deleteAnime.css">
 
     <title>Simonso's Anime List</title>
-    <link rel="icon" src="/sal/public/images/SAL LOGO v2.jpg">
+    <link rel="icon" src="images/SAL LOGO v2.jpg">
 
     <script src="registerSW.js"></script>
   </head>
@@ -48,7 +48,7 @@ if(!$loggedinUser) {
                 <!--    <p><a href="logout.php">Logout</a></p>
                 <p><a href="login.php">Login</a></p> -->
                <div class="logo">
-                <img src="/sal/public/images/SAL LOGO v2.jpg" alt="SAL logo">
+                <img src="images/SAL LOGO v2.jpg" alt="SAL logo">
                </div>
              </header>
               <nav>
