@@ -2,7 +2,7 @@
 	"name": "Simonso's Anime List",
 	"short_name": "SAL",
 	"lang": "nb-NO",
-	"start_url": "/",
+	"start_url": "/sal/public/",
 	"display": "standalone",
 	"theme_color": "#FFFFFF",
 	"icons": [

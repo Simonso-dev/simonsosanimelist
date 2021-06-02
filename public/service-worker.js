@@ -1,18 +1,16 @@
-self.addEventListener('install', function(event) {
-  // Perform install steps
-});
-
-var CACHE_NAME = 'SAL-v1';
+var cacheName = 'SAL-v1';
 var urlsToCache = [
-  '/',
+  '/sal/public/registerSW.js',
+  '/sal/public/manifest.json',
   '/sal/public/styles/main.css',
   '/sal/public/styles/addAnime.css',
   '/sal/public/styles/deleteAnime.css',
   '/sal/public/styles/login.css',
-  '/sal/public/index.php',
+  '/index.php',
   '/sal/public/addAnime.php',
   '/sal/public/deleteAnime.php',
   '/sal/public/check.php',
+  '/sal/public/db.php',
   '/sal/public/footer.php',
   '/sal/public/header.php',
   '/sal/public/readAnimelist.php',
@@ -23,78 +21,32 @@ var urlsToCache = [
   '/sal/public/registerUser.php'
 ];
 
-self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+self.addEventListener('install', (e) => {
+  self.skipWaiting();
+  console.log(`[Service Worker] Install - ${cacheName}`);
+  e.waitUntil((async () => {
+      const cache = await caches.open(cacheName);
+      console.log('[Service Worker] Caching all: app shell and content');
+      await cache.addAll(urlsToCache);
+      console.log('[Service Worker] Downloaded: app shell and content');
+  })());
 });
 
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
+self.addEventListener('fetch', (e) => {
+  e.respondWith((async () => {
+      const r = await caches.match(e.request, { ignoreSearch: true });
+      //console.log([Service Worker] Fetching resource: ${e.request.url});
+      if (r) { return r; }
+      const response = await fetch(e.request);
+      const cache = await caches.open(cacheName);
+      if (e.request.method !== "POST") {
+          //console.log([Service Worker] Caching new resource: ${e.request.url});
+          cache.put(e.request, response.clone());
       }
-    )
-  );
+      return response;
+  })());
 });
 
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
-
-        return fetch(event.request).then(
-          function(response) {
-            // Check if we received a valid response
-            if(!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
-
-            // IMPORTANT: Clone the response. A response is a stream
-            // and because we want the browser to consume the response
-            // as well as the cache consuming the response, we need
-            // to clone it so we have two streams.
-            var responseToCache = response.clone();
-
-            caches.open(CACHE_NAME)
-              .then(function(cache) {
-                cache.put(event.request, responseToCache);
-              });
-
-            return response;
-          }
-        );
-      })
-    );
-});
-
-self.addEventListener('activate', function(event) {
-
-  var cacheAllowlist = ['pages-cache-v1', 'blog-posts-cache-v1'];
-
-  event.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.map(function(cacheName) {
-          if (cacheAllowlist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
+self.addEventListener('activate', (e) => {
+  console.log(`[Service Worker] ${cacheName} now ready to handle fetches!`);
 });
