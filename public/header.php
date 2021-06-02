@@ -35,7 +35,6 @@ if(!$loggedinUser) {
     <link rel="stylesheet" href="styles/deleteAnime.css">
 
     <title>Simonso's Anime List</title>
-    <link rel="icon" src="images/SAL LOGO v2.jpg">
 
     <script src="registerSW.js"></script>
   </head>

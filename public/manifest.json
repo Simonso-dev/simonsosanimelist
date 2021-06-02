@@ -2,12 +2,12 @@
 	"name": "Simonso's Anime List",
 	"short_name": "SAL",
 	"lang": "nb-NO",
-	"start_url": "/sal/public/",
+	"start_url": "/",
 	"display": "standalone",
 	"theme_color": "#FFFFFF",
 	"icons": [
 	  {
-		"src": "/sal/public/images/SAL LOGO v2.png",
+		"src": "images/SAL LOGO v2.png",
 		"sizes": "192x192",
 		"type": "image/png"
 	  }
