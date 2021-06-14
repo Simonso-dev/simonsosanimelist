@@ -11,25 +11,48 @@ include("header.php");
 include("db.php");
 include("validate.php");
 
+
 if (isset($_POST["add"])) {
 
-    $animename=$_POST["animename"];
-    $episodes=$_POST["episodes"];
-    $score=$_POST["score"];
+    $query="SELECT Username, is_admin 
+            FROM Users
+            WHERE Username='$loggedinUser' AND is_admin=1;";
 
-    $legalAnimename=validateAnimename($animename);
-    $legalEpisodes=validateEpisodes($episodes);
-    $legalScore=validateScore($score);
+    $result=mysqli_query($conn,$query);
 
-     if($legalAnimename && $legalEpisodes && $score) {
+    $numRows=mysqli_num_rows($result);
 
-        $sqlQuery="INSERT INTO Anime (Animename, Episodes, Score)
+    for($r=1; $r<=$numRows; $r++) {
+  
+    $row=mysqli_fetch_array($result);
+    $username=$row["Username"];
+    $isAdmin=$row["is_admin"];
+
+    }  
+
+    if(!@$isAdmin) {
+      print("<div class='Msg'>You don't have permission to add anime</div>");
+    }
+    if(@$isAdmin) {
+
+      $animename=$_POST["animename"];
+      $episodes=$_POST["episodes"];
+      $score=$_POST["score"];
+
+      $legalAnimename=validateAnimename($animename);
+      $legalEpisodes=validateEpisodes($episodes);
+      $legalScore=validateScore($score);
+
+      if($legalAnimename && $legalEpisodes && $score) {
+
+          $query="INSERT INTO Anime (Animename, Episodes, Score)
                     VALUES ('$animename','$episodes','$score');";
 
-        $sqlResult=mysqli_query($conn, $sqlQuery) or die ("Not able to register data");
+          $result=mysqli_query($conn, $query) or die ("Not able to register data");
 
-        print("Anmie has been registered");
-      }
+          print("<div class='Msg'>Anmie has been registered</div>");
+        }
+    }
 }
 include("footer.php");
 ?>

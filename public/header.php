@@ -1,11 +1,11 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+include("functions.php");
+
 session_start();
 @$loggedinUser=$_SESSION["username"];
-
-if(!$loggedinUser) {
-  // print("Not logged in");
-  // print("<meta http-equiv='refresh' content='0;url=index.php'>");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,13 +42,14 @@ if(!$loggedinUser) {
             <div class="container">
              <header>
               <h1>Simonso's Anime List</h1>
-          <!-- <input type="text" name="search" id="search" value="Search">
-                <input type="submit" name="searchbutton" id="searchbutton"> -->
-                <!--    <p><a href="logout.php">Logout</a></p>
-                <p><a href="login.php">Login</a></p> -->
                <div class="logo">
                 <img src="images/SAL LOGO v2.jpg" alt="SAL logo">
                </div>
+          <!-- <input type="text" name="search" id="search" value="Search">
+                <input type="submit" name="searchbutton" id="searchbutton"> -->
+                <a class="logout" href="logout.php">Logout</a>
+                <a class="login" href="login.php">Login</a>
+                <?php loggedIn(); ?> 
              </header>
               <nav>
                 <ul>
@@ -57,5 +58,4 @@ if(!$loggedinUser) {
                  <li><a href="deleteAnime.php">Delete</a></li>
                 </li>
               </nav>
-               <div class="side1"></div>
                 <main>

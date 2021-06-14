@@ -6,22 +6,5 @@ $username = "ofe7c7506pnk3swy";
 $password = "z4ypie1ranjpaa1x";
 $db = "o9d6d8m1y5kentde";
 
-$conn =new mysqli($server, $username, $password, $db) or die("Not able to contact the database-server");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$conn = new mysqli($server, $username, $password, $db) or die("Not able to contact the database-server");
 ?>

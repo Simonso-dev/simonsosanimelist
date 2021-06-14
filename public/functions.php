@@ -2,7 +2,7 @@
 
 // This function gets all the columns in the Anime table
 // and shows them dynamically in a listbox
-function listboxAnime(){
+function listboxAnime() {
 
     include("db.php");
 
@@ -14,7 +14,7 @@ function listboxAnime(){
 
     $numRows=mysqli_num_rows($sqlResult);
 
-    for($r=1; $r<=$numRows; $r++){
+    for($r=1; $r<=$numRows; $r++) {
             
             $row=mysqli_fetch_array($sqlResult);
             $animenr=$row["AnimeNr"];
@@ -24,5 +24,17 @@ function listboxAnime(){
 
             print("<option value='$animename'>$animename $episodes $score</option>");   
        }
+}
+// Checks if a user is logged in or not
+function loggedIn() {
+
+     @$loggedinUser=$_SESSION["username"];
+     
+     if(!$loggedinUser) {
+          print("<div class='NotLoggedIn'>Not logged in</div>");
+     }
+     else {
+          print("<div class='LoggedInAs'>$loggedinUser</div>");
+     } 
 }
 ?>
