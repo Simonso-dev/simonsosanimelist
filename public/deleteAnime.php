@@ -28,7 +28,6 @@ if(isset($_POST["deleteanime"])) {
     $row=mysqli_fetch_array($result);
     $username=$row["Username"];
     $isAdmin=$row["is_admin"];
-
     }  
 
     if(!@$isAdmin) {

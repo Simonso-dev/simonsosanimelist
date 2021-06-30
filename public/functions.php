@@ -6,17 +6,17 @@ function listboxAnime() {
 
     include("db.php");
 
-    $sqlQuery="SELECT * 
-               FROM Anime 
-               ORDER BY Animename;";
+    $query="SELECT * 
+            FROM Anime 
+            ORDER BY Animename;";
     
-    $sqlResult=mysqli_query($conn,$sqlQuery);
+    $result=mysqli_query($conn,$query);
 
-    $numRows=mysqli_num_rows($sqlResult);
+    $numRows=mysqli_num_rows($result);
 
     for($r=1; $r<=$numRows; $r++) {
             
-            $row=mysqli_fetch_array($sqlResult);
+            $row=mysqli_fetch_array($result);
             $animenr=$row["AnimeNr"];
             $animename=$row["Animename"];
             $episodes=$row["Episodes"];
@@ -25,16 +25,107 @@ function listboxAnime() {
             print("<option value='$animename'>$animename $episodes $score</option>");   
        }
 }
-// Checks if a user is logged in or not
+// Searches for users in the database.
+// When it finds a match it prints out a new form.
+// Where you can grant or revoke admin access from a user.
+function searchUsers() {
+
+ if(isset($_POST["search"])) {
+
+     $search=$_POST["searchUsers"];
+
+     include("db.php");
+
+     $query="SELECT Username, is_admin
+             FROM Users
+             WHERE Username LIKE '$search';";
+     
+     $result=mysqli_query($conn,$query);
+
+     $numRows=mysqli_num_rows($result);
+
+     if($numRows==0) {
+          print("<div class='Msg'>no matching user</div>");
+     }
+     else {
+
+          for($r=1; $r<=$numRows; $r++) {
+      
+               $row=mysqli_fetch_array($result);
+               $username=$row["Username"];
+               $isAdmin=$row["is_admin"];
+          }
+          
+          $grantAdmin="<input type='submit' name='revokeAdmin' value='Revoke' class='revokeAdmin'>";
+          $adminTxt="Yes";
+          if($isAdmin==0) {
+               $adminTxt="No";
+               $grantAdmin="<input type='submit' name='grantAdmin' value='Grant' class='grantAdmin'>";
+          }
+
+          print("<form method='post' name='grantAndRevokeAdminForm'>");
+          print("<input type='hidden' name='user' value='$username' readonly><p>Username: $username</p>");
+          print("Admin: $adminTxt $grantAdmin");
+          print("</form>");
+     }
+ }
+
+}
+// Checks if a user is logged in or not.
+// Then it prints out if you're logged in or not in the navigation bar
 function loggedIn() {
 
      @$loggedinUser=$_SESSION["username"];
      
      if(!$loggedinUser) {
-          print("<div class='NotLoggedIn'>Not logged in</div>");
+          print("<li><a class='login' href='login.php'>Login</a></li>");
+          //print("<li><a>Not logged in</a></li>");
      }
      else {
-          print("<div class='LoggedInAs'>$loggedinUser</div>");
+          print("<li><a class='logout' href='logout.php'>Logout</a></li>");
+          print("<a>$loggedinUser</a>");
      } 
+}
+// Checks if your logged in or not 
+// and prints it in the user info section on the settings page.
+// If you're logged in it will display your username and if you're an admin.
+function userInfo() {
+     
+     @$loggedinUser=$_SESSION["username"];
+
+     include("db.php");
+
+     $query="SELECT Username, is_admin
+             FROM Users
+             WHERE Username='$loggedinUser';";
+     
+     $result=mysqli_query($conn,$query);
+
+     $numRows=mysqli_num_rows($result);
+
+     for($r=1; $r<=$numRows; $r++) {
+      
+          $row=mysqli_fetch_array($result);
+          $username=$row["Username"];
+          $isAdmin=$row["is_admin"];
+     }
+
+     if(!$loggedinUser) {
+
+          print("<p>Username: *</p>");
+          print("<p>Admin: *</p>");
+          print("<p>You are not logged in</p>");
+          print("<p>Click <a href='login.php'>HERE</a> to login</p>");
+     }
+     else {
+
+          $adminTxt="Yes";
+          if(@$isAdmin==0) {
+               $adminTxt="No";
+          }
+
+          print("<p>Username: $loggedinUser</p>");
+          print("<p>Admin: $adminTxt</p>");
+     }
 }
 ?>

@@ -11,7 +11,6 @@ include("header.php");
 include("db.php");
 include("validate.php");
 
-
 if (isset($_POST["add"])) {
 
     $query="SELECT Username, is_admin 
@@ -24,10 +23,9 @@ if (isset($_POST["add"])) {
 
     for($r=1; $r<=$numRows; $r++) {
   
-    $row=mysqli_fetch_array($result);
-    $username=$row["Username"];
-    $isAdmin=$row["is_admin"];
-
+        $row=mysqli_fetch_array($result);
+        $username=$row["Username"];
+        $isAdmin=$row["is_admin"];
     }  
 
     if(!@$isAdmin) {

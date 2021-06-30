@@ -10,9 +10,6 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <link rel="manifest" href="manifest.json">
-
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="SAL">
@@ -29,33 +26,37 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/addAnime.css">
     <link rel="stylesheet" href="styles/deleteAnime.css">
-
+    <link rel="stylesheet" href="styles/settings.css">
+    
     <title>Simonso's Anime List</title>
 
-    <script src="registerSW.js"></script>
   </head>
          <body>
             <div class="container">
              <header>
-              <h1>Simonso's Anime List</h1>
+              <input type="checkbox" id="navToggle" checked> 
+              <div class="logoCol">  
+               <h1>Simonso's Anime List</h1>
                <div class="logo">
-                <img src="images/SAL LOGO v2.jpg" alt="SAL logo">
-               </div>
-          <!-- <input type="text" name="search" id="search" value="Search">
-                <input type="submit" name="searchbutton" id="searchbutton"> -->
-                <a class="logout" href="logout.php">Logout</a>
-                <a class="login" href="login.php">Login</a>
-                <?php loggedIn(); ?> 
+                 <img  src="images/SAL LOGO v2.jpg" alt="SAL logo">
+                </div>
+              </div>
+                <nav>
+                 <ul>
+                  <li><a href="index.php">Home</a></li>
+                  <li><a href="addAnime.php">Add</a></li>
+                  <li><a href="deleteAnime.php">Delete</a></li>
+                  <li><a class="settings" href="settings.php">Settings</a></li>
+                  <?php loggedIn(); ?>
+                 </ul>
+                </nav>
+                 <label for="navToggle" class="burger">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                 </label>
              </header>
-              <nav>
-                <ul>
-                 <li><a href="index.php">Home</a></li>
-                 <li><a href="addAnime.php">Add</a></li>
-                 <li><a href="deleteAnime.php">Delete</a></li>
-                </li>
-              </nav>
-                <main>
+              <main>

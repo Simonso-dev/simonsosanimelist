@@ -7,10 +7,9 @@
     height: 100vh;
 
     grid-template-columns:0.5fr 1fr 0.5fr;
-    grid-template-rows: 0.1fr 0.1fr 1.6fr 0.1fr;
+    grid-template-rows: 0.1fr 1.6fr 0.1fr;
     grid-template-areas:
     "header header header"
-    "nav nav nav"
     "main main main"
     "footer footer footer";
 
@@ -24,88 +23,62 @@ header{
         grid-area: header;
         display: flex;
         align-items: center;
-        justify-content: center;
+        padding: 10px;
+        z-index: 999;
 }
-header h1{
-          padding: 10px;
+.logoCol {
+    display: flex;
+    align-items: center;
+    flex-basis: 100%;
 }
-header p a{
-           text-decoration: none;
-           color: white;
-           padding: 5px 20px;
-}
-.login {
-    text-decoration: none;
-    color: white;
-    padding: 5px 20px;
-    position: relative;
-}
-.login::after{
-    content: "";
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: currentColor;
-
-    position: absolute;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.25s ease-in;
-}
-.login:hover::after {
-    transform: scaleX(1);
-}
-.logout {
-    text-decoration: none;
-    color: white;
-    padding: 5px 20px;
-    position: relative;
-}
-.logout::after{
-    content: "";
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: currentColor;
-
-    position: absolute;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.25s ease-in;
-}
-.logout:hover::after {
-    transform: scaleX(1);
+.logoCol h1{
+          float: left;
+          padding: 0 10px;
 }
 .logo img{
     clip-path: circle();
-    width:  35px;
+    max-width:  35px;
     height: auto;
-}
-nav{
-    background-color: rgba(74, 74, 74, 0.3);
-    backdrop-filter: blur(40px);
-    grid-area: nav;
+    float: left;
 }
 nav ul{
-    list-style-type: none;
-    text-align: center;
-    height: auto;
+    grid-area: header;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    float: right;
+    height: 100%;
 }
-nav li{
-        display: inline-block;
+nav ul li{
+    list-style-type: none;   
 }
-nav a{
+nav ul a{
     text-decoration: none;
-    color: #EBEBEB;
-    padding: 14px 30px;
+    color: white;
+    padding: 10px 20px;
     display: block;
 }
 nav a:hover{
-    background-color: #accdff;
-    color: #585858;
-    transition: 0.3s;
+    padding-top: 5px;
+    color: rgb(180, 180, 180);
+    transition: 0.25s;
+}
+#navToggle{
+    position: absolute;
+    display: none;
+}
+.burger {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.burger .line {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    margin: 5px;
 }
 .addAnime{
     text-decoration: none;
@@ -123,6 +96,7 @@ footer{
        backdrop-filter: blur(40px);
        grid-area: footer;
        padding: 15px;
+       z-index: 999;
 }
 .footerWrap {
        display: flex;
@@ -131,6 +105,7 @@ footer{
 }
 .footerWrap h3 {
     padding: 5px 20px;
+   
 }
 .github img {
     height: 25px;
@@ -156,20 +131,20 @@ footer{
 .github:hover::after {
     transform: scaleX(1);
 }
-table{
+.animeTable {
       padding: 5px;
       width: 50vw;
       margin: auto;
 }
-table tr{
+.animeTable  tr{
          background-color: rgba(74, 74, 74, 0.2);
          backdrop-filter: blur(40px);
 }
-table td{
+.animeTable  td{
        padding: 4px;
        border-radius: 5px;
 }
-table th{
+.animeTable  th{
     padding: 4px;
     border-radius: 5px;
 }
@@ -184,10 +159,9 @@ table th{
         height: 100vh;
     
         grid-template-columns: 1fr;
-        grid-template-rows: 0.1fr 0.1fr 1.6fr 0.1fr;
+        grid-template-rows: 0.1fr  1.6fr 0.1fr;
         grid-template-areas:
         "header"
-        "nav"
         "main"
         "footer";
     
@@ -195,8 +169,62 @@ table th{
         color: white;
         background-image: radial-gradient(circle at 67% 83%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 1%,transparent 1%, transparent 5%,transparent 5%, transparent 100%),radial-gradient(circle at 24% 80%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 27%,transparent 27%, transparent 63%,transparent 63%, transparent 100%),radial-gradient(circle at 23% 5%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 26%,transparent 26%, transparent 82%,transparent 82%, transparent 100%),radial-gradient(circle at 21% 11%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 35%,transparent 35%, transparent 45%,transparent 45%, transparent 100%),radial-gradient(circle at 10% 11%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 21%,transparent 21%, transparent 81%,transparent 81%, transparent 100%),radial-gradient(circle at 19% 61%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 20%,transparent 20%, transparent 61%,transparent 61%, transparent 100%),radial-gradient(circle at 13% 77%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 63%,transparent 63%, transparent 72%,transparent 72%, transparent 100%),radial-gradient(circle at 30% 93%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 33%,transparent 33%, transparent 82%,transparent 82%, transparent 100%),linear-gradient(90deg, rgb(22, 176, 207),rgb(103, 7, 215));
     }
-    table{
+    .logoCol h1{
+        float: left;
+        padding: 0 10px;
+        font-size: 4vw;
+    }
+    .animeTable{
         padding: 5px;
         width: 100vw;
+    }
+    .footerWrap h3 {
+        padding: 5px 20px;
+        font-size: 3vw;
+    }
+}
+@media(max-width: 1030px) {
+    .container {
+        display: grid;
+        height: 100vh;
+    
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr  1.6fr 0.1fr;
+        grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background-image: radial-gradient(circle at 67% 83%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 1%,transparent 1%, transparent 5%,transparent 5%, transparent 100%),radial-gradient(circle at 24% 80%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 27%,transparent 27%, transparent 63%,transparent 63%, transparent 100%),radial-gradient(circle at 23% 5%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 26%,transparent 26%, transparent 82%,transparent 82%, transparent 100%),radial-gradient(circle at 21% 11%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 35%,transparent 35%, transparent 45%,transparent 45%, transparent 100%),radial-gradient(circle at 10% 11%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 21%,transparent 21%, transparent 81%,transparent 81%, transparent 100%),radial-gradient(circle at 19% 61%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 20%,transparent 20%, transparent 61%,transparent 61%, transparent 100%),radial-gradient(circle at 13% 77%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 63%,transparent 63%, transparent 72%,transparent 72%, transparent 100%),radial-gradient(circle at 30% 93%, hsla(317,0%,96%,0.05) 0%, hsla(317,0%,96%,0.05) 33%,transparent 33%, transparent 82%,transparent 82%, transparent 100%),linear-gradient(90deg, rgb(22, 176, 207),rgb(103, 7, 215));
+    }
+    nav ul {
+        position: absolute;
+        width: auto;
+        height: 30em;
+        top: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        grid-area: main;
+        float: none;
+        flex-direction: column;
+
+        background-color: rgba(54, 54, 54, 1);
+    }
+    nav a:hover {
+        border-radius: 5px;
+        background: rgb(37, 37, 37);
+        padding: 10px;
+        color: white;
+        transition: 0.25s ease-in;
+    }
+    header :checked ~ nav {
+        display: none;  
+    }
+    .burger {
+        display: block;
     }
 }

@@ -1,0 +1,83 @@
+.settingsFlex {
+    display: flex;
+    padding: 10px;
+}
+.settingsCol {
+    flex-basis: 50%;
+    padding: 5px;
+    margin: 0;
+}
+.settingsBG {
+    background-color: rgba(74, 74, 74, 0.2);
+    backdrop-filter: blur(40px);
+    border-radius: 5px;
+    padding: 5px;
+}
+.settingsBG h3 {
+    padding: 5px 0;
+}
+.settingsBG p {
+    padding: 15px 0;
+}
+.grantAdmin {
+    padding: 3px;
+    margin: 0 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: #9EB7FF;
+    color: white;
+    width: 10%;
+}
+.grantAdmin:hover {
+    border: none;
+    background-color: #394e8d;
+    color: white;
+    transition: 0.25s;
+}
+.revokeAdmin {
+    padding: 3px;
+    margin: 0 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff5555;
+    color: white;
+    width: 10%;
+}
+.revokeAdmin:hover {
+    border-radius: 10px;
+    border: none;
+    background-color: #832a2a;
+    color: white;
+    transition: 0.25s;
+}
+@media(max-width: 900px) {
+    .settingsFlex {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    .settingsCol {
+        flex: 1 1 50%;
+        padding: 5px;
+        margin: 0;
+    }
+
+}
+@media(max-width: 1250px) {
+    .grantAdmin {
+       width: 15%; 
+    }
+    .revokeAdmin {
+        width: 15%; 
+     }
+
+}
+@media(max-width: 400px) {
+    .grantAdmin {
+       width: 30%; 
+    }
+    .revokeAdmin {
+        width: 30%; 
+     }
+
+}

@@ -2,8 +2,8 @@
 
 include("db.php");
 
-print("<table>");
-print("<tr><th>AnimeNr</th><th>Anime Name</th><th>Episodes</th><th>Score</th></tr>");
+print("<table class='animeTable'>");
+print("<tr><th>Anime</th><th>Episodes</th><th>Score</th></tr>");
 
 $sqlQuery="SELECT *
            FROM Anime
@@ -20,7 +20,7 @@ for($r=1;$r<=$numRows;$r++) {
   $episodes=$row["Episodes"];
   $score=$row["Score"];
 
-  print("<tr><td>$animenr</td> <td>$animename</td> <td>$episodes</td> <td>$score</td></tr>");
+  print("<tr><td>$animename</td> <td>$episodes</td> <td>$score</td></tr>");
 }
 print("</table>");
 ?>
