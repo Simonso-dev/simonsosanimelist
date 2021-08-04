@@ -1,6 +1,6 @@
 <?php
 
-// This function gets all the columns in the Anime table
+// This function selects all the columns in the Anime table
 // and shows them dynamically in a listbox
 function listboxAnime() {
 
@@ -79,11 +79,9 @@ function loggedIn() {
      
      if(!$loggedinUser) {
           print("<li><a class='login' href='login.php'>Login</a></li>");
-          //print("<li><a>Not logged in</a></li>");
      }
      else {
           print("<li><a class='logout' href='logout.php'>Logout</a></li>");
-          print("<a>$loggedinUser</a>");
      } 
 }
 // Checks if your logged in or not 
@@ -115,7 +113,7 @@ function userInfo() {
           print("<p>Username: *</p>");
           print("<p>Admin: *</p>");
           print("<p>You are not logged in</p>");
-          print("<p>Click <a href='login.php'>HERE</a> to login</p>");
+          print("<or>Click <a href='login.php'>HERE</a> to login, or <a href='registerUser.php'>HERE</a> to register.</p>");
      }
      else {
 

@@ -131,6 +131,19 @@ footer{
 .github:hover::after {
     transform: scaleX(1);
 }
+.infoSecurity {
+    text-decoration: none;
+    list-style: none;
+    padding: 5px 20px;
+}
+.infoSecurity li a {
+    color: white;
+    font-weight: lighter;
+    text-decoration: none;
+}
+.infoSecurity li a:hover {
+    text-decoration: underline;
+}
 .animeTable {
       padding: 5px;
       width: 50vw;

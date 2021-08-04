@@ -18,6 +18,19 @@ include("header.php");
       <?php searchUsers(); ?>
   </div>
  </div>
+ <div class="settingsCol">
+  <div class="settingsBG">
+   <h3>Privacy and Cookies</h3>
+    <p> The only information stored about users are username and password. 
+        Due to security reasons "for example if a hacker or someone other than me gets access to the database"
+        users shouldn't pick an username nor password that can be identified with them.
+        Even when passwords in the database is encrypted.
+    </p>
+     <p>The only cookies that are used is a session cookie wich stores your username.
+        Reason for this so I can make functionalites such checking if a user is logged in or if a user is an admin.
+     </p>
+  </div>
+ </div>
 </div>
 <?php
 // This function grants admin privlliges to a user 

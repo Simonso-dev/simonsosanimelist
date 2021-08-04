@@ -27,16 +27,31 @@
 <div class="container">
  <header></header>
    <main>
-    <form id="registerform" name="registerform" method="post">
-     <h3>Register</h3>
-      Username <input type="text" name="username" id="username"><br>
-      Password <input type="password" name="password" id="password"><br>
+    <div class="registerFlex">
+    <div class="registerCol">
+      <div class="warning">
+       <h3>WARNING!</h3>
+       <p> When you register you automatically accept privacy and cookies terms. 
+           You can read more about the terms <a href="settings.php">HERE</a>.
+       </p>
+        <p>Don't use an username or password that can be asscociated with you anywhere.
+           Since this web application is experimental, under development and for school parcticies.
+        </p>
+      </div>
+     </div>
+     <div class="registerCol">
+      <form id="registerform" name="registerform" method="post">
+       <h3>Register</h3>
+        Username <input type="text" name="username" id="username"><br>
+        Password <input type="password" name="password" id="password"><br>
                 <input type="submit" name="register" id="register" value="Register"><br>
-    </form>
-    <p id="registered">
-      Allready registered? <br>
-      Click <a href="login.php">HERE</a> to login
-    </p>
+       </form>
+        <p id="registered">
+         Allready registered? <br>
+         Click <a href="login.php">HERE</a> to login
+        </p>
+     </div>
+    </div>
    </main>
      <footer>Created by Simonso </footer>
 <?php

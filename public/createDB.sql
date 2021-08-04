@@ -5,3 +5,9 @@ CREATE TABLE IF NOT EXISTS Users (
     is_admin    BOOLEAN,
     PRIMARY KEY (UserId)
 );
+
+CREATE TABLE IF NOT EXISTS Anime_Poll (
+    Username VARCHAR(20),
+    Bad_Taste BOOLEAN NULL,
+    FOREIGN KEY (Username) REFERENCES Users (Username)
+);
